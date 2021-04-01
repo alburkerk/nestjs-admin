@@ -1,3 +1,4 @@
+import { AdminEntity } from 'nestjs-admin';
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
@@ -13,4 +14,9 @@ export class User {
 
   @Column({ default: true })
   isActive: boolean;
+}
+
+export class UserAdmin extends AdminEntity {
+  entity = User;
+  listDisplay = ['firstName', 'lastName'];
 }
