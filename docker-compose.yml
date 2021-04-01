@@ -1,0 +1,15 @@
+version: '3.2'
+services:
+  db:
+    image: microsoft/mssql-server-linux:latest
+    container_name: nest-admin-db
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=_ToTo1234
+      - MSSQL_PID=Express
+    expose:
+      - '1433'
+    ports:
+      - '1433:1433'
+    volumes:
+      - ./data/db:/var/opt/mssql - /var/opt/mssql/data
